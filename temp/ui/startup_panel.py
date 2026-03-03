@@ -2,7 +2,7 @@ from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QHBoxLayout, 
                                QTableWidget, QTableWidgetItem, QHeaderView, QLineEdit,
                                QVBoxLayout, QAbstractItemView)
 from PySide6.QtCore import Qt, Signal, QTimer
-from PySide6.QtGui import QColor, QFont
+from PySide6.QtGui import QColor, QFont, QKeyEvent
 
 
 
@@ -45,6 +45,8 @@ class StartupPanel(QWidget):
         self.input_btn_labels = ["Получить информацию", "Введите тег", "Некорректный тег", "Получение информации..."]
 
         self.input_btn.clicked.connect(self.on_button_clicked)
+
+        self.input_btn.installEventFilter(self)
 
     def cr_label(self):
         self.label = QLabel("Введите тег клана")
@@ -91,6 +93,15 @@ class StartupPanel(QWidget):
             if not (char.isdigit() or ('A' <= char <= 'Z')):
                 return False
         return True
+    
+    def eventFilter(self, obj, event):
+        if obj == self.input_btn and event.type() == event.Type.MouseButtonPress:
+            required_modifiers = Qt.ControlModifier | Qt.AltModifier
+            if (event.modifiers() == required_modifiers and event.button() == Qt.LeftButton):
+                self.clan_tag_entered.emit("#2CY9RP90Q")
+                self.input_btn.setText(self.input_btn_labels[3])
+                return True
+        return super().eventFilter(obj, event)
 
     def eliminate(self):
         self.clan_tag_entered.disconnect()
