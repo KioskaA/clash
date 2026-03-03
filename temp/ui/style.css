@@ -1,0 +1,7 @@
+QHeaderView::section {
+            background-color: #a1a1a1;  /* Зеленый фон */
+            color: black;                /* Белый текст */
+            padding: 0px;
+            border: 1px solid #000000;
+            font-weight: bold;
+        }

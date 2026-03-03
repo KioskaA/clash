@@ -1,0 +1,6 @@
+
+
+
+
+class ExtraPanel:
+    pass

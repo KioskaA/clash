@@ -31,7 +31,6 @@ class MainWindow(QMainWindow):
 
         self.setup_ui()
 
-
     def create_widgets(self): # Создание виджетов, иерархия лаяутов
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
