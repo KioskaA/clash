@@ -1,0 +1,10 @@
+*.env
+
+**/__pycache__/
+
+coc_api_service/
+
+venv/
+
+desc.txt
+temp.jpg
