@@ -192,18 +192,27 @@ class ExtraPanel(QWidget):
             if attack:
                 stars = day.get("stars", 0)
                 percentage = day.get("percentage", 0)
-                info_text = f"Атаковал на {stars} звезды, {percentage}%"
+                if stars == 0:
+                    info_text = f"Атаковал на {stars} звезд, {percentage}%"
+                elif stars == 1:
+                    info_text = f"Атаковал на {stars} звезду, {percentage}%"
+                else:
+                    info_text = f"Атаковал на {stars} звезды, {percentage}%"
             elif replaced:
                 info_text = "Заменён"
             else:
                 info_text = "Не атаковал"
 
             info_item = QTableWidgetItem(info_text)
-            info_item.setTextAlignment(Qt.AlignCenter)
+            info_item.setTextAlignment(Qt.AlignLeft | Qt.AlignVCenter)
 
             background_color = None
             if attack and stars == 3:
                 background_color = QColor(144, 238, 144)  # Светло-зеленый
+            elif attack and stars >0 and stars <3:
+                background_color = QColor(196, 238, 144)  # 
+            elif attack and stars == 0:
+                background_color = QColor(255, 255, 224)  # Светло-желтый
             elif replaced:
                 background_color = QColor(211, 211, 211)  # Светло-серый
             elif not attack and not replaced:

@@ -164,12 +164,15 @@ class DataGenerator:
             else:
                 attack = random.random() < 0.8
                 if attack:
-                    stars = random.randint(1, 3)
-                    if stars == 1:
+                    # теперь звезды могут быть 0,1,2,3 с разными весами (настройте по желанию)
+                    stars = random.choices([0,1,2,3], weights=[0.1, 0.3, 0.3, 0.3])[0]
+                    if stars == 0:
+                        percentage = random.randint(0, 49)      # 0 звёзд – меньше 50%
+                    elif stars == 1:
                         percentage = random.randint(4, 92)
                     elif stars == 2:
                         percentage = random.randint(50, 99)
-                    else:
+                    else:  # stars == 3
                         percentage = 100
                 else:
                     stars = 0
