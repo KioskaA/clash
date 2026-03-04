@@ -27,11 +27,12 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("App")
         self.setFixedSize(1280, 720)
 
-        self.members_table_data = []
         self.chosen_member = None
+
+        self.members_table_data = []
         self.player_frame_data = []
         self.extra_panel_data = []
-        
+
         self.detail_section = None
 
         self.on_startup()
@@ -51,7 +52,6 @@ class MainWindow(QMainWindow):
         if self.check_clantag_existance(clantag):
             # ! ПОЛУЧЕНИЕ ВСЕХ ДАННЫХ ИЗ COCAPI
             #self.members_table_data = 
-            #self.chosen_member = 
             #self.player_frame_data = 
             #self.extra_panel_data = 
 
@@ -103,7 +103,6 @@ class MainWindow(QMainWindow):
         self.central_panel.addWidget(self.player_frame)
 
         self.right_panel.addWidget(self.extra_panel)
-
 
     def create_members_table(self):
         self.members_table_data = dg.create_members_table_data(50) # ! УДАЛИТЬ ЭТУ СТРОКУ ПОСЛЕ НАСТРОЙКИ cocapi

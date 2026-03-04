@@ -74,10 +74,21 @@ class PlayerFrame(QGroupBox):
         self.edit_mode = False  # Флаг режима редактирования
         self.edited_values = {}  # Словарь для хранения измененных значений
 
-        # Создаем метки со значениями по умолчанию
+        cg_widget = QWidget()
+        cg_layout = QHBoxLayout(cg_widget)
+        cg_layout.setContentsMargins(0, 0, 0, 0)
+
         self.cg_label = QLabel("Очки игр кланов: Н/Д")
         self.cg_label.setFont(QFont("Arial", 8))
-        self.frame_layout.addWidget(self.cg_label)
+        cg_layout.addWidget(self.cg_label)
+        
+        self.cg_button = QPushButton("...")
+        self.cg_button.setFixedSize(14, 14)
+        self.cg_button.setStyleSheet("margin-top: 1px;")
+        self.cg_button.setToolTip("Изменить")
+        cg_layout.addWidget(self.cg_button)
+        cg_layout.addStretch()
+        self.frame_layout.addWidget(cg_widget)
         self.activity_labels.append(self.cg_label)
 
         self.cc_label = QLabel("Войска: Н/Д")
