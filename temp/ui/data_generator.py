@@ -1,8 +1,12 @@
 import random
 import time
 import string
+from datetime import date, timedelta
 
 class DataGenerator:
+    def __init__(self):
+        self.cw_list = self.cw_list_generator()
+
     def printfromDict(self, Dict, name="Dict", showname=True):
         if Dict == None:
             return
@@ -26,6 +30,12 @@ class DataGenerator:
                 self.printfromDict(item, showname=False)
                 i += 1
             print("---" + "-" * len(name) + "---")
+        else:
+            i = 1
+            for item in List:
+                print(f"--------")
+                self.printfromDict(item, showname=False)
+                i += 1
 
     def sleep(self, ms, text=False):
         if text:
@@ -100,10 +110,58 @@ class DataGenerator:
             })
         self.player_frame_data = player_frame_data
         return player_frame_data
+    
+    def create_extra_panel_data(self):
+        extra_panel_data = []
+        i = 0
+        for member in self.members_table_data:
+            extra_panel_data.append({
+                "tag": member["tag"],
+                "cwl": {},
+                "cw": self.cw_member_data_generator(),
+                "raids": {}
+            })
+            i += 1
+        data = self.sort_cw_by_date(extra_panel_data, True)
+        self.extra_panel_data = data
+        return data
+    
+    def sort_cw_by_date(self, data, reverse=True):
+        for member in data:
+            if "cw" in member and member["cw"]:
+                member["cw"].sort(key=lambda x: x.get("date", ""), reverse=reverse)
+        return data
+    
+    def cw_member_data_generator(self):
+        cw_member_data = []
+        for cw_id in range(len(self.cw_list)):
+            cw_member_data.append({
+                "id": self.cw_list[cw_id]["id"],
+                "date": self.cw_list[cw_id]["date"],
+                "result": self.cw_list[cw_id]["result"],
+                "participation": random.choice([True, False]),
+                "attacks": random.randint(0, 2),
+                "stars": random.randint(0, 3)
+            })
+        return cw_member_data
+
+    def cw_list_generator(self, amount=5):
+        cw_list = []
+        Date = date(2026, 1, 29)
+        for i in range(1, amount+1):
+            cw_list.append({
+                "id": i,
+                "date": str(Date + timedelta(2*i)),
+                "result": random.choice(["win", "lose", "tie"])
+            })
+        return cw_list
 
 
 if __name__ == "__main__":
     dg = DataGenerator()
     members_table_data = dg.create_members_table_data(2)
     player_frame_data = dg.create_player_frame_data()
-    dg.printfromList(player_frame_data, name="Игроки", showname=True)
+    extra_panel_data = dg.create_extra_panel_data()
+    cw_list = dg.cw_list_generator()
+    tempdata = dg.cw_member_data_generator()
+    dg.printfromList(tempdata, name="Игроки", showname=False)

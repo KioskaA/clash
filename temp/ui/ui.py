@@ -31,6 +31,8 @@ class MainWindow(QMainWindow):
         self.chosen_member = None
         self.player_frame_data = []
         self.extra_panel_data = []
+        
+        self.detail_section = None
 
         self.on_startup()
 
@@ -54,7 +56,7 @@ class MainWindow(QMainWindow):
             #self.extra_panel_data = 
 
             self.startup_panel.eliminate()
-            self.setup_layouts(clantag)
+            self.setup_layouts()
         
         else:
             self.startup_panel.show_temporary_message(f"Не существует клана с тегом {clantag}")
@@ -68,8 +70,17 @@ class MainWindow(QMainWindow):
         self.chosen_member = tag
         self.player_frame.chosen_member = tag
         self.player_frame.fill_with_data()
+        self.extra_panel.chosen_member = tag
 
-    def setup_layouts(self, clantag):
+        if hasattr(self, 'detail_section') and self.detail_section:
+            if self.detail_section == "cw":
+                self.extra_panel.show_cw_extra()
+            elif self.detail_section == "cwl":
+                self.extra_panel.show_cwl_extra()
+            elif self.detail_section == "raids":
+                self.extra_panel.show_raids_extra()
+
+    def setup_layouts(self):
         self.left_panel = QVBoxLayout()
         self.left_panel.setContentsMargins(0, 0, 0, 0)
         self.left_panel.setSpacing(0)
@@ -81,7 +92,7 @@ class MainWindow(QMainWindow):
         self.create_player_frame()
 
         self.right_panel = QHBoxLayout()
-        #self.create_extra_frame()
+        self.create_extra_panel()
 
         self.main_layout.addLayout(self.left_panel)
         self.main_layout.addLayout(self.central_panel)
@@ -91,20 +102,32 @@ class MainWindow(QMainWindow):
 
         self.central_panel.addWidget(self.player_frame)
 
-        #self.right_panel.addWidget(self.extra_frame)
+        self.right_panel.addWidget(self.extra_panel)
 
-        #self.extra_frame.show_empty()
 
     def create_members_table(self):
-        self.members_table_data = dg.create_members_table_data(50)
+        self.members_table_data = dg.create_members_table_data(50) # ! УДАЛИТЬ ЭТУ СТРОКУ ПОСЛЕ НАСТРОЙКИ cocapi
         self.members_table = MembersTable(self.members_table_data)
 
     def create_player_frame(self):
-        self.player_frame_data = dg.create_player_frame_data()
+        self.player_frame_data = dg.create_player_frame_data() # ! УДАЛИТЬ ЭТУ СТРОКУ ПОСЛЕ НАСТРОЙКИ cocapi
         self.player_frame = PlayerFrame(self.player_frame_data, self.chosen_member)
+        self.player_frame.detail_button_clicked.connect(self.on_detail_button_clicked)
+
+    def on_detail_button_clicked(self, section_name):
+        print(f"Нажата кнопка 'Подробнее' в разделе: {section_name} для игрока {self.chosen_member}")
+        self.detail_section = section_name
+        self.extra_panel.chosen_member = self.chosen_member
+        if section_name == "cw":
+            self.extra_panel.show_cw_extra()
+        elif section_name == "cwl":
+            self.extra_panel.show_cwl_extra()
+        elif section_name == "raids":
+            self.extra_panel.show_raids_extra()
 
     def create_extra_panel(self):
-        self.extra_panel = ExtraPanel()
+        self.extra_panel_data = dg.create_extra_panel_data()  # ! УДАЛИТЬ ЭТУ СТРОКУ ПОСЛЕ НАСТРОЙКИ cocapi
+        self.extra_panel = ExtraPanel(self.extra_panel_data)
 
 
 def main():

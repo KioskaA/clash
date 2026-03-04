@@ -5,6 +5,8 @@ from PySide6.QtGui import QFont
 
 
 class PlayerFrame(QGroupBox):
+    detail_button_clicked = Signal(str)
+
     def __init__(self, player_frame_data, chosen_member):
         super().__init__("Информация об игроке")
         self.setFixedWidth(500)
@@ -12,6 +14,7 @@ class PlayerFrame(QGroupBox):
 
         self.player_frame_data = player_frame_data
         self.chosen_member = chosen_member
+        self.active_detail_button = None
 
         # Создаем основной вертикальный layout для рамки
         self.frame_layout = QVBoxLayout(self)
@@ -118,6 +121,8 @@ class PlayerFrame(QGroupBox):
         self.lwk_detail_button.setFixedWidth(100)
         lwk_layout.addWidget(self.lwk_detail_button)
 
+        self.lwk_detail_button.clicked.connect(lambda: self.on_detail_button_clicked("cwl", self.lwk_detail_button))
+
         self.frame_layout.addWidget(self.lwk_group)
 
     def create_cw_section(self):
@@ -138,10 +143,11 @@ class PlayerFrame(QGroupBox):
         self.cw_with_attacks_label.setFont(QFont("Arial", 8))
         cw_layout.addWidget(self.cw_with_attacks_label)
 
-        # Кнопка "Подробнее" для КВ
         self.cw_detail_button = QPushButton("Подробнее")
         self.cw_detail_button.setFixedWidth(100)
         cw_layout.addWidget(self.cw_detail_button)
+
+        self.cw_detail_button.clicked.connect(lambda: self.on_detail_button_clicked("cw", self.cw_detail_button))
 
         self.frame_layout.addWidget(self.cw_group)
 
@@ -163,12 +169,27 @@ class PlayerFrame(QGroupBox):
         self.raid_available_attacks_label.setFont(QFont("Arial", 8))
         raid_layout.addWidget(self.raid_available_attacks_label)
 
-        # Кнопка "Подробнее" для Рейдов
         self.raid_detail_button = QPushButton("Подробнее")
         self.raid_detail_button.setFixedWidth(100)
         raid_layout.addWidget(self.raid_detail_button)
 
+        self.raid_detail_button.clicked.connect(lambda: self.on_detail_button_clicked("raids", self.raid_detail_button))
+
         self.frame_layout.addWidget(self.raid_group)
+
+    def on_detail_button_clicked(self, section_name, button):
+        # Возвращаем предыдущей активной кнопке исходный текст
+        if self.active_detail_button and self.active_detail_button != button:
+            self.active_detail_button.setText("Подробнее")
+            self.active_detail_button.setEnabled(True)
+        
+        # Меняем текст нажатой кнопки на стрелку
+        button.setText("→")
+        button.setEnabled(False)
+        self.active_detail_button = button
+        
+        # Испускаем сигнал с названием секции
+        self.detail_button_clicked.emit(section_name)
 
     def fill_with_data(self):
         player = self.find_player()
