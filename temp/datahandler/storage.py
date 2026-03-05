@@ -1,0 +1,11 @@
+# Open Read Save Update Load
+
+class Saver():
+    def __init__(self, jsonstore_folder):
+        ...
+    ...
+
+
+
+class Loader():
+    ...
