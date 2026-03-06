@@ -175,7 +175,7 @@ class ExtraPanel(QWidget):
         if not cwl_data:
             return
         
-        title_text = f'ЛВК №{cwl_data.get("id", "?")}, {cwl_data.get("date", "Неизвестно")}'
+        title_text = f'Сезон: {cwl_data.get("date", "Неизвестно")}' # ! ДОДЕЛАТЬ ОБРАБОТКУ
         self.cwl_header_label.setText(title_text)
         
         days = cwl_data.get("days", [])

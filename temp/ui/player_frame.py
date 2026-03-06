@@ -65,7 +65,7 @@ class PlayerFrame(QGroupBox):
 
     def create_activity_labels(self):
         # Надпись "За последние 30 дней:"
-        self.label_last_30_days = QLabel("За последние 30 дней:")
+        self.label_last_30_days = QLabel("Сезон: Март 2026")
         self.label_last_30_days.setFont(QFont("Arial", 9))
         self.frame_layout.addWidget(self.label_last_30_days)
 
