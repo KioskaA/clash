@@ -1,0 +1,345 @@
+home_clan: this is Uzbekis
+opponent: ARGENTINIDAD
+state: War Ended
+end_time: 2026-03-07 11:04:54
+team_size: 15
+status: lost
+home_members: 
+  Элемент 1:
+    - tag: #LGLV0GPG2
+    - name: ziyodov_u
+    - town_hall: 16
+    - star_count: 6
+    - attacks: 
+      Элемент 1:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #LGLV0GPG2
+        - duration: 96
+      Элемент 2:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #LGLV0GPG2
+        - duration: 115
+  Элемент 2:
+    - tag: #GUPV9PUQJ
+    - name: АуРуМ
+    - town_hall: 17
+    - star_count: 6
+    - attacks: 
+      Элемент 1:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GUPV9PUQJ
+        - duration: 156
+      Элемент 2:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GUPV9PUQJ
+        - duration: 112
+  Элемент 3:
+    - tag: #GCR0Q8VGU
+    - name: dr_26
+    - town_hall: 15
+    - star_count: 6
+    - attacks: 
+      Элемент 1:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GCR0Q8VGU
+        - duration: 133
+      Элемент 2:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GCR0Q8VGU
+        - duration: 120
+  Элемент 4:
+    - tag: #QR2PLG9L8
+    - name: Erik
+    - town_hall: 13
+    - star_count: 4
+    - attacks: 
+      Элемент 1:
+        - stars: 2
+        - destruction: 90
+        - attacker_tag: #QR2PLG9L8
+        - duration: 103
+      Элемент 2:
+        - stars: 2
+        - destruction: 82
+        - attacker_tag: #QR2PLG9L8
+        - duration: 102
+  Элемент 5:
+    - tag: #L2GGUVVGY
+    - name: _ ķøřøł_
+    - town_hall: 12
+    - star_count: 0
+    - attacks: 
+  Элемент 6:
+    - tag: #GUPC8LP0R
+    - name: Islomiddin
+    - town_hall: 12
+    - star_count: 2
+    - attacks: 
+      Элемент 1:
+        - stars: 2
+        - destruction: 86
+        - attacker_tag: #GUPC8LP0R
+        - duration: 122
+  Элемент 7:
+    - tag: #80GGPGRPP
+    - name: _-SIROJIDDIN-_
+    - town_hall: 12
+    - star_count: 1
+    - attacks: 
+      Элемент 1:
+        - stars: 1
+        - destruction: 55
+        - attacker_tag: #80GGPGRPP
+        - duration: 73
+      Элемент 2:
+        - stars: 0
+        - destruction: 27
+        - attacker_tag: #80GGPGRPP
+        - duration: 44
+  Элемент 8:
+    - tag: #GVCJG82JP
+    - name: Мавлон
+    - town_hall: 12
+    - star_count: 6
+    - attacks: 
+      Элемент 1:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GVCJG82JP
+        - duration: 97
+      Элемент 2:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GVCJG82JP
+        - duration: 132
+  Элемент 9:
+    - tag: #GGULL9G9V
+    - name: Батья
+    - town_hall: 12
+    - star_count: 0
+    - attacks: 
+  Элемент 10:
+    - tag: #GVVU8PLL2
+    - name: chillout
+    - town_hall: 12
+    - star_count: 3
+    - attacks: 
+      Элемент 1:
+        - stars: 1
+        - destruction: 89
+        - attacker_tag: #GVVU8PLL2
+        - duration: 143
+      Элемент 2:
+        - stars: 2
+        - destruction: 59
+        - attacker_tag: #GVVU8PLL2
+        - duration: 85
+  Элемент 11:
+    - tag: #G8JUQYLJJ
+    - name: Jan1Ka
+    - town_hall: 12
+    - star_count: 3
+    - attacks: 
+      Элемент 1:
+        - stars: 2
+        - destruction: 71
+        - attacker_tag: #G8JUQYLJJ
+        - duration: 117
+      Элемент 2:
+        - stars: 1
+        - destruction: 61
+        - attacker_tag: #G8JUQYLJJ
+        - duration: 89
+  Элемент 12:
+    - tag: #GY2CV9Y9L
+    - name: адил
+    - town_hall: 12
+    - star_count: 5
+    - attacks: 
+      Элемент 1:
+        - stars: 2
+        - destruction: 72
+        - attacker_tag: #GY2CV9Y9L
+        - duration: 90
+      Элемент 2:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GY2CV9Y9L
+        - duration: 144
+  Элемент 13:
+    - tag: #P0PLUCRLY
+    - name: глеб
+    - town_hall: 12
+    - star_count: 0
+    - attacks: 
+  Элемент 14:
+    - tag: #QL28GYUV8
+    - name: Jasur
+    - town_hall: 12
+    - star_count: 5
+    - attacks: 
+      Элемент 1:
+        - stars: 2
+        - destruction: 58
+        - attacker_tag: #QL28GYUV8
+        - duration: 94
+      Элемент 2:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #QL28GYUV8
+        - duration: 117
+  Элемент 15:
+    - tag: #GJRLQGUQU
+    - name: samar
+    - town_hall: 11
+    - star_count: 4
+    - attacks: 
+      Элемент 1:
+        - stars: 3
+        - destruction: 100
+        - attacker_tag: #GJRLQGUQU
+        - duration: 131
+      Элемент 2:
+        - stars: 1
+        - destruction: 88
+        - attacker_tag: #GJRLQGUQU
+        - duration: 124
+attacks: 
+  Элемент 1:
+    - stars: 2
+    - destruction: 86
+    - attacker_tag: #GUPC8LP0R
+    - duration: 122
+  Элемент 2:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #LGLV0GPG2
+    - duration: 115
+  Элемент 3:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #LGLV0GPG2
+    - duration: 96
+  Элемент 4:
+    - stars: 1
+    - destruction: 61
+    - attacker_tag: #G8JUQYLJJ
+    - duration: 89
+  Элемент 5:
+    - stars: 2
+    - destruction: 71
+    - attacker_tag: #G8JUQYLJJ
+    - duration: 117
+  Элемент 6:
+    - stars: 0
+    - destruction: 27
+    - attacker_tag: #80GGPGRPP
+    - duration: 44
+  Элемент 7:
+    - stars: 1
+    - destruction: 55
+    - attacker_tag: #80GGPGRPP
+    - duration: 73
+  Элемент 8:
+    - stars: 2
+    - destruction: 82
+    - attacker_tag: #QR2PLG9L8
+    - duration: 102
+  Элемент 9:
+    - stars: 2
+    - destruction: 90
+    - attacker_tag: #QR2PLG9L8
+    - duration: 103
+  Элемент 10:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GUPV9PUQJ
+    - duration: 112
+  Элемент 11:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GUPV9PUQJ
+    - duration: 156
+  Элемент 12:
+    - stars: 2
+    - destruction: 59
+    - attacker_tag: #GVVU8PLL2
+    - duration: 85
+  Элемент 13:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GVCJG82JP
+    - duration: 132
+  Элемент 14:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GVCJG82JP
+    - duration: 97
+  Элемент 15:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #QL28GYUV8
+    - duration: 117
+  Элемент 16:
+    - stars: 2
+    - destruction: 58
+    - attacker_tag: #QL28GYUV8
+    - duration: 94
+  Элемент 17:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GCR0Q8VGU
+    - duration: 120
+  Элемент 18:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GCR0Q8VGU
+    - duration: 133
+  Элемент 19:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GY2CV9Y9L
+    - duration: 144
+  Элемент 20:
+    - stars: 1
+    - destruction: 89
+    - attacker_tag: #GVVU8PLL2
+    - duration: 143
+  Элемент 21:
+    - stars: 2
+    - destruction: 72
+    - attacker_tag: #GY2CV9Y9L
+    - duration: 90
+  Элемент 22:
+    - stars: 1
+    - destruction: 88
+    - attacker_tag: #GJRLQGUQU
+    - duration: 124
+  Элемент 23:
+    - stars: 3
+    - destruction: 100
+    - attacker_tag: #GJRLQGUQU
+    - duration: 131
+ovelooked_members: 
+  - #L2GGUVVGY
+  - #GGULL9G9V
+  - #P0PLUCRLY
+attacked_members: 
+  - #LGLV0GPG2
+  - #GUPV9PUQJ
+  - #GCR0Q8VGU
+  - #QR2PLG9L8
+  - #GUPC8LP0R
+  - #80GGPGRPP
+  - #GVCJG82JP
+  - #GVVU8PLL2
+  - #G8JUQYLJJ
+  - #GY2CV9Y9L
+  - #QL28GYUV8
+  - #GJRLQGUQU
