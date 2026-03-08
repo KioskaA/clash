@@ -6,17 +6,17 @@ from PySide6.QtCore import Qt, Signal
 from PySide6.QtGui import QColor, QFont
 
 if __name__ == "__main__":
-    from members_table import MembersTable
-    from player_frame import PlayerFrame
-    from extra_info_panel import ExtraPanel
-    from data_generator import DataGenerator
-    from startup_panel import StartupPanel
+    from old.members_table import MembersTable
+    from old.player_frame import PlayerFrame
+    from old.extra_info_panel import ExtraPanel
+    from old.data_generator import DataGenerator
+    from old.startup_panel import StartupPanel
 else:
-    from .members_table import MembersTable
-    from .player_frame import PlayerFrame
-    from .extra_info_panel import ExtraPanel
-    from .data_generator import DataGenerator
-    from .startup_panel import StartupPanel
+    from .old.members_table import MembersTable
+    from .old.player_frame import PlayerFrame
+    from .old.extra_info_panel import ExtraPanel
+    from .old.data_generator import DataGenerator
+    from .old.startup_panel import StartupPanel
 
 dg = DataGenerator()
 
