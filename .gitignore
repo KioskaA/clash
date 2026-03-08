@@ -2,8 +2,9 @@
 
 **/__pycache__/
 
-coc_api_service/
-
 venv/
 
 documentation/
+
+slepok.py
+snapshot.md
