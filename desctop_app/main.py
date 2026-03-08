@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import QTimer
 from qasync import QEventLoop, asyncSlot
 
-from config import settings
+from desctop_app.config import settings
 from ui.ui import MainWindow
 from cocapi import 
 

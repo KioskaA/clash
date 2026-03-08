@@ -1,6 +1,6 @@
 import coc
 import asyncio
-from config import settings
+from desctop_app.config import settings
 
 APILogin = settings.coc_api["login"]
 APIPassword = settings.coc_api["password"]
