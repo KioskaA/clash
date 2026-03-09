@@ -72,3 +72,6 @@ class PlayersSection(QWidget):
         self.add_player_btn.setMaximumWidth(300)
 
         self.widgets.append(self.add_player_btn)
+
+
+    # ! Добавить всплывающее окно после нажатия кнопки add_player_btn
