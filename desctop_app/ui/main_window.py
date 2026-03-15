@@ -17,10 +17,10 @@ class MainWindow(QMainWindow):
 
         self.setup()
 
-        self.show_auth()
+        #self.show_auth()
         #self.show_registration()
         #self.show_menu()
-        #self.show_players()
+        self.show_players()
 
         self.setFocus()
 

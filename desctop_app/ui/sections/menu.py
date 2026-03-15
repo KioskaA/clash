@@ -48,7 +48,7 @@ class MenuSection(QWidget):
         self.setFocus()
 
     def create_goto_players_button(self):
-        self.goto_players_btn = QPushButton("Список игроков")
+        self.goto_players_btn = QPushButton("Избранные игроки")
         self.goto_players_btn.setMinimumHeight(40)
         self.goto_players_btn.setMaximumWidth(300)
         

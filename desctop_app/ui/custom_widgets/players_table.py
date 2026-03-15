@@ -48,7 +48,7 @@ class PlayersTable(QTableWidget):
         self.setFixedWidth(460)
 
     def cells(self):
-        self.setRowCount(5)
+        self.setRowCount(0)
         self.setColumnCount(4)
         self.setColumnWidth(0, 25)
         self.setColumnWidth(1, 105)

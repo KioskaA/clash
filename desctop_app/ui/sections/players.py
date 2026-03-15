@@ -14,6 +14,7 @@ from PySide6.QtCore import Qt, Signal, QTimer
 from PySide6.QtGui import QColor, QFont, QKeyEvent
 
 from ui.custom_widgets import MockWidget, PlayerFrame, PlayersTable
+from ui.dialogs import AddPlayersDialog
 
 
 
@@ -22,7 +23,7 @@ class PlayersSection(QWidget):
 
     def __init__(self, parent):
         super().__init__(parent)
-        self.widgets = []
+        self.bottom_layout_widgets = []
 
         self.setup()
 
@@ -40,8 +41,8 @@ class PlayersSection(QWidget):
         self.player_frame = PlayerFrame(self, w=750, h=600)
         #self.players_table = MockWidget(self, bgcolor="#BEE28E", width=450, height=600)
         #self.player_frame = MockWidget(self, bgcolor="#CF9D9D", width=750, height=600)
-        self.create_goto_menu_button()
         self.create_add_player_button()
+        self.create_goto_menu_button()
 
         top_area.addLayout(left_layout)
         top_area.addLayout(right_layout)
@@ -52,10 +53,14 @@ class PlayersSection(QWidget):
 
         left_layout.addWidget(self.players_table)
         right_layout.addWidget(self.player_frame)
-        bottom_layout.addWidget(self.add_player_btn)
-        bottom_layout.addWidget(self.goto_menu_btn)
+        for widget in self.bottom_layout_widgets:
+            bottom_layout.addWidget(widget)
 
         self.setFocus()
+
+    def open_add_dialog(self):
+        dialog = AddPlayersDialog(self)
+        dialog.exec()
 
     def create_goto_menu_button(self):
         self.goto_menu_btn = QPushButton("Назад в меню")
@@ -64,14 +69,14 @@ class PlayersSection(QWidget):
         
         self.goto_menu_btn.clicked.connect(self.goto_menu_requested.emit)
 
-        self.widgets.append(self.goto_menu_btn)
+        self.bottom_layout_widgets.append(self.goto_menu_btn)
 
     def create_add_player_button(self):
-        self.add_player_btn = QPushButton("Добавить игрока")
+        self.add_player_btn = QPushButton("Добавить")
         self.add_player_btn.setMinimumHeight(40)
         self.add_player_btn.setMaximumWidth(300)
+        
+        self.add_player_btn.clicked.connect(self.open_add_dialog)
 
-        self.widgets.append(self.add_player_btn)
-
-
-    # ! Добавить всплывающее окно после нажатия кнопки add_player_btn
+        self.bottom_layout_widgets.append(self.add_player_btn)
+        
